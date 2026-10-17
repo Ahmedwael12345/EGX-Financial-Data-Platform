@@ -27,24 +27,24 @@ The platform culminates in a Power BI executive dashboard that translates the un
 
 ### Income Statement & Profitability
 Tracks revenue growth, EBITDA, and profitability margins across the sector.
-![Income Statement](assets/Screenshot%202026-10-17%20at%206.48.02%20PM.jpg)
+![Income Statement](assets/income-statement.png)
 
 ### Balance Sheet & Capital Structure
 Visualizes asset composition, total liabilities, and debt-to-equity ratios.
-![Balance Sheet](assets/Screenshot%202026-10-17%20at%206.47.45%20PM.png)
+![Balance Sheet](assets/balance-sheet.png)
 
 ### Liquidity & Working Capital
 Monitors the Cash Conversion Cycle (CCC), current ratios, and net working capital components.
-![Working Capital](assets/Screenshot%202026-10-17%20at%206.47.13%20PM.png)
-![Liquidity Ratios](assets/Screenshot%202026-10-17%20at%206.47.27%20PM.png)
+![Working Capital](assets/working-capital.png)
+![Liquidity Ratios](assets/liquidity.png)
 
 ### Cash Flow & Margin Trends
 Correlates net income with operating cash flow and historical margin trends.
-![Cash Flow](assets/Screenshot%202026-10-17%20at%206.48.12%20PM.jpg)
+![Cash Flow](assets/cash-flow.png)
 
 ### Company Performance Matrix
 Provides cross-company comparisons utilizing DAX snapshot measures for accurate aggregate totals.
-![Company Matrix](assets/Screenshot%202026-10-17%20at%206.46.51%20PM.png)
+![Company Matrix](assets/company-matrix.png)
 
 ---
 
