@@ -124,7 +124,7 @@ def main():
         df_new["Run_ID"] = run_id
         save_bronze_incremental(df_new, str(BRONZE_CSV_PATH))
     else:
-        print("\No data was extracted in this run.")
+        print("No data was extracted in this run.")
 
 if __name__ == "__main__":
     main()
