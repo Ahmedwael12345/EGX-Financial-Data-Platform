@@ -23,7 +23,7 @@ DRIVER = "org.postgresql.Driver"
 
 def ensure_gold_tables_and_constraints_exist():
     """Creates Gold schema, tables, and PK/FK constraints if they don't exist."""
-    print("🛠️ Ensuring PostgreSQL Schema, Tables, and Foreign Keys exist...")
+    print(" Ensuring PostgreSQL Schema, Tables, and Foreign Keys exist...")
     conn = psycopg2.connect(
         dbname="egx_financial_db",
         user=DB_USER,
@@ -87,7 +87,7 @@ spark = configure_spark_with_delta_pip(
 ).getOrCreate()
 
 if not os.path.exists(SILVER_DELTA_PATH):
-    print(f"❌ Error: Delta path does not exist at {SILVER_DELTA_PATH}")
+    print(f"Error: Delta path does not exist at {SILVER_DELTA_PATH}")
     sys.exit(1)
 
 # 4. Load & Filter Silver Delta Data
@@ -169,7 +169,7 @@ fact_financials = df_silver.select(
 # ------------------------------------------------------------
 # 6. Write Staging Tables
 # ------------------------------------------------------------
-print("📦 Staging Gold tables in PostgreSQL...")
+print(" Staging Gold tables in PostgreSQL...")
 write_staging_table(dim_statements, "stg_DimStatements")
 write_staging_table(dim_accounts, "stg_DimAccounts")
 write_staging_table(dim_date, "stg_DimDate")
@@ -180,7 +180,7 @@ write_staging_table(fact_financials, "stg_FactFinancials")
 # 7. Execute PostgreSQL Incremental Upserts
 # ------------------------------------------------------------
 def execute_incremental_upserts():
-    print("🔄 Upserting staged records into Target Gold Tables...")
+    print(" Upserting staged records into Target Gold Tables...")
     conn = psycopg2.connect(
         dbname="egx_financial_db",
         user=DB_USER,
@@ -230,10 +230,10 @@ def execute_incremental_upserts():
     cursor.execute(upsert_sql)
     cursor.close()
     conn.close()
-    print("✅ Incremental PostgreSQL Gold Upsert Complete!")
+    print(" Incremental PostgreSQL Gold Upsert Complete!")
 
 
 execute_incremental_upserts()
 
-print("\n🎉 Gold Incremental Load Complete & Star Schema Maintained!")
+print("\n Gold Incremental Load Complete & Star Schema Maintained!")
 spark.stop()
