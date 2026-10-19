@@ -78,7 +78,7 @@ def main():
         "Referer": "https://stockanalysis.com/",
     })
 
-    print("🚀 Starting StockAnalysis Incremental Bronze Scraper...\n")
+    print("Starting StockAnalysis Incremental Bronze Scraper...\n")
     company_pbar = tqdm(COMPANIES, desc="Overall Progress", unit="company")
 
     for company in company_pbar:
